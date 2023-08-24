@@ -41,8 +41,6 @@ public class AnimationAndMovementController : MonoBehaviour
     Dictionary<int, float> initialJumpVelocities = new Dictionary<int, float>();
     Dictionary<int, float> jumpGravities = new Dictionary<int, float>();
     Coroutine currentJumpResetRoutine = null;
-
-    public float bounceForce;
     private void Awake()
     {
         playerInput = new PlayerInput();
@@ -62,7 +60,7 @@ public class AnimationAndMovementController : MonoBehaviour
         playerInput.PlayerControls.Jump.started += OnJump;
         playerInput.PlayerControls.Jump.canceled += OnJump;
 
-        SetupJumpVariables();
+        SetupJumpVariables();        
     }
 
     void SetupJumpVariables()
@@ -219,7 +217,6 @@ public class AnimationAndMovementController : MonoBehaviour
 
         HandleGravity();
         HandleJump();
-        HandleBounce();
     }
 
     private void OnEnable()
@@ -251,24 +248,5 @@ public class AnimationAndMovementController : MonoBehaviour
         Vector3 vectorRotatedToCameraSpace = cameraForwardZProduct + cameraRightXProduct;
         vectorRotatedToCameraSpace.y = currentYValue;
         return vectorRotatedToCameraSpace;
-    }
-
-    void HandleBounce()
-    {
-        RaycastHit hit;
-        if (Physics.Raycast(transform.position, Vector3.down, out hit, 0.2f))
-        {
-            if (hit.collider.CompareTag("Agent"))
-            {
-                animator.SetBool(isJumpingHash, true);
-                isJumpingAnimating = true;
-                isJumping = true;
-                jumpCount += 1;
-                animator.SetInteger(jumpCountHash, jumpCount);
-                currentMovement.y = initialJumpVelocities[jumpCount];
-                appliedMovement.y = initialJumpVelocities[jumpCount];
-                Destroy(hit.collider.gameObject);
-            }
-        }
-    }
+    }    
 }

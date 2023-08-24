@@ -4,24 +4,24 @@ using UnityEngine;
 
 public class AgentFollowBehaviour : StateMachineBehaviour
 {
-    AgentMeleeMovement agent;
+    //AgentMeleeMovement agent;
 
     //OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        agent = FindObjectOfType<AgentMeleeMovement>();
+       // agent = FindObjectOfType<AgentMeleeMovement>();
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        Follow();
+        //Follow();
     }
 
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        agent.agent.speed = 5.0f;
+        //agent.agent.speed = 2.0f;
     }
 
     // OnStateMove is called right after Animator.OnAnimatorMove()
@@ -35,24 +35,23 @@ public class AgentFollowBehaviour : StateMachineBehaviour
     //{
     //    // Implement code that sets up animation IK (inverse kinematics)
     //}
-    private void Follow()
-    {
+    //private void Follow()
+    //{
 
-        if (agent.playerOnTarget)
-        {
-            agent.changeTarget = false;
-            agent.agent.speed = 10.0f;
-            agent.agent.SetDestination(agent.player.transform.position);
-            //if (agent.playerOnTarget && agent.distanceWithPlayer <= 4f)
-            //{
-            //    agent._animator.SetTrigger("Attack");
-            //}
-        }
-        else
-        {
-            agent.agent.SetDestination(agent.targetsPatrolling[0].position);
-            agent.changeTarget=true;
-        }
-
-    }
+    //    if (agent.playerOnTarget)
+    //    {
+    //        agent.changeTarget = false;
+    //        agent.agent.speed = 4f;
+    //        agent.agent.SetDestination(agent.player.transform.position);
+    //        if (agent.playerOnTarget && agent.distanceWithPlayer <= 4f)
+    //        {
+    //            agent.animator.SetTrigger("Attack");
+    //        }
+    //    }
+    //    else
+    //    {
+    //        agent.agent.SetDestination(agent.newTransform[0].transform.position);
+    //        agent.changeTarget=true;
+    //    }
+    //}
 }

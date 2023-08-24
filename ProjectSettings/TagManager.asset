@@ -9,6 +9,7 @@ TagManager:
   - Aprovechable
   - Deposito
   - Agent
+  - PlayerFoot
   layers:
   - Default
   - TransparentFX
