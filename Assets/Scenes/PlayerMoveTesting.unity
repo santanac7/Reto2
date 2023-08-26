@@ -2600,7 +2600,6 @@ MonoBehaviour:
   rotationFactorPerFrame: 15
   walkMultiplier: 3
   runMultiplier: 6
-  bounceForce: 0
 --- !u!114 &1677438020
 MonoBehaviour:
   m_ObjectHideFlags: 0

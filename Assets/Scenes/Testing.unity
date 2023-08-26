@@ -1707,14 +1707,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   agent: {fileID: 0}
-  targetsPatrolling:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  newTransform: []
   changeTarget: 1
   rotationSpeed: 2
   animator: {fileID: 0}
-  headRay: {fileID: 0}
   player: {fileID: 1677438013}
   playerOnTarget: 0
   distanceWithPlayer: 0
@@ -3254,7 +3250,6 @@ MonoBehaviour:
   rotationFactorPerFrame: 15
   walkMultiplier: 3
   runMultiplier: 6
-  bounceForce: 2
 --- !u!114 &1677438020
 MonoBehaviour:
   m_ObjectHideFlags: 0

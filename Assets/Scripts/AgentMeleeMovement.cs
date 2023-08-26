@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
-using static UnityEditor.Experimental.GraphView.GraphView;
 
 public class AgentMeleeMovement : MonoBehaviour
 {
@@ -36,22 +35,7 @@ public class AgentMeleeMovement : MonoBehaviour
     {
         agent = GetComponent<NavMeshAgent>();
         animator = GetComponent<Animator>();
-        player = GameObject.FindGameObjectWithTag("Player");
-
-        //Vector3 currtenAgetnPos = transform.position;
-
-        //transPos = new Vector3[3];
-        //transPos[0] = new Vector3(4f, 0, -4f);
-        //transPos[1] = new Vector3(4f, 0, 3.5f);
-        //transPos[2] = new Vector3(-4f, 0, -1);
-
-        //newTransform = new GameObject[3];
-
-        //for (int i = 0; i < newTransform.Length; i++)
-        //{
-        //    newTransform[i] = Instantiate(prefabTransform);
-        //    newTransform[i].transform.position = currtenAgetnPos + transPos[i];
-        //}
+        player = GameObject.FindGameObjectWithTag("Player"); 
     }
     void Update()
     {

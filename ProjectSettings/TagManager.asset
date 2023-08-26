@@ -10,6 +10,7 @@ TagManager:
   - Deposito
   - Agent
   - PlayerFoot
+  - Item
   layers:
   - Default
   - TransparentFX
