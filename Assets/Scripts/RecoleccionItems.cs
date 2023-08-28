@@ -14,6 +14,7 @@ public class RecoleccionItems : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Item"))
         {
+            AudioManager.instance.PlaySfx(2);
             Destroy(other.gameObject);
             gameManager.CounterItems++;
         }

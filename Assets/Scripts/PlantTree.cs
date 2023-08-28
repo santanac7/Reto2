@@ -29,6 +29,7 @@ public class PlantTree : MonoBehaviour
             if (!gameManager.canPlant)
             {
                 panelNeedSeed.SetActive(true);
+                AudioManager.instance.PlaySfx(4);
             }
             else
             {
@@ -46,6 +47,7 @@ public class PlantTree : MonoBehaviour
                 tree.SetActive(true);
                 panelPlantTree.SetActive(false);
                 this.gameObject.SetActive(false);
+                AudioManager.instance.PlaySfx(6);
             }
         }
     }

@@ -30,6 +30,7 @@ public class RedemZone : MonoBehaviour
             else
             {
                 panelCantRedem.SetActive(true);
+                AudioManager.instance.PlaySfx(4);
             }
         }
     }
@@ -43,6 +44,7 @@ public class RedemZone : MonoBehaviour
                 gameManager.canPlant = true;
                 panelCanRedem.SetActive(false);
                 panelCanPlantInfo.SetActive(true);
+                AudioManager.instance.PlaySfx(3);
             }
         }
     }
