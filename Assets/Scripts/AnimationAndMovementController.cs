@@ -6,7 +6,8 @@ using UnityEngine.Rendering;
 
 public class AnimationAndMovementController : MonoBehaviour
 {
-    PlayerInput playerInput;
+    [HideInInspector]
+    public PlayerInput playerInput;
     CharacterController characterController;
     Animator animator;
 
@@ -56,9 +57,9 @@ public class AnimationAndMovementController : MonoBehaviour
         playerInput.PlayerControls.Move.canceled += OnMovementInput;
         playerInput.PlayerControls.Move.performed += OnMovementInput;
         playerInput.PlayerControls.Run.started += OnRun;
-        playerInput.PlayerControls.Run.canceled += OnRun;
+        playerInput.PlayerControls.Run.canceled += OnRun;;
         playerInput.PlayerControls.Jump.started += OnJump;
-        playerInput.PlayerControls.Jump.canceled += OnJump;
+        playerInput.PlayerControls.Jump.canceled += OnJump;        
 
         SetupJumpVariables();        
     }

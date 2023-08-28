@@ -11,6 +11,7 @@ TagManager:
   - Agent
   - PlayerFoot
   - Item
+  - BoxTree
   layers:
   - Default
   - TransparentFX

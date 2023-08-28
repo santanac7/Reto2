@@ -5,22 +5,17 @@ using UnityEngine;
 public class RecoleccionItems : MonoBehaviour
 {
     GameManager gameManager;
+    
     private void Start()
     {
         gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();
     }
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Aprovechable"))
+        if (other.gameObject.CompareTag("Item"))
         {
-            gameManager.ContadorApro++;
-            Debug.Log("Aprovechable " + gameManager.ContadorApro);
-        }
-
-        if (other.gameObject.CompareTag("NoAprovechable"))
-        {
-            gameManager.ContadorNoApro++;
-            Debug.Log("No Aprovechable " + gameManager.ContadorNoApro);
+            Destroy(other.gameObject);
+            gameManager.CounterItems++;
         }
     }
 }
